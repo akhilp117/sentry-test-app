@@ -30,14 +30,24 @@ function App() {
         Trigger Tagged Error
       </button>
 
-      <button onClick={ 
-        () => { 
-          throw new Error("Testing sus commits feature!"); 
-          }
-        }
-      >
-        Trigger Broken Commit
-      </button>
+      <button onClick={() => { 
+              Sentry.captureException(new Error("Testing sus commits feature!")); 
+            }}>
+              Trigger Broken Committt
+            </button>
+
+            <button onClick={() => {
+        
+        Sentry.startSpan({ name: "starting transaction", op: "ui.action" }, () => {
+          
+          console.log("long runtime transaction example....");
+          for(let i = 0; i < 5000000; i++) {} 
+          console.log("finished");
+
+        });
+      }}>
+        Trigger Performance Transaction
+    </button>
 
     </div>
     

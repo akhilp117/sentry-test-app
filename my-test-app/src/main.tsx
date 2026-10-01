@@ -9,7 +9,11 @@ import * as Sentry from "@sentry/react";
 
 Sentry.init({
   dsn: "https://87f0f720c7fd25be4da87b32fcb20438@o4512170173005824.ingest.us.sentry.io/4512170180476929",
-  release: "test-release-02"
+  release: "test-release-02",
+  integrations: [
+    Sentry.browserTracingIntegration(),
+  ],
+  tracesSampleRate: 1.0, 
 });
 
 // Leave this original Vite code completely alone:
