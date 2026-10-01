@@ -30,6 +30,15 @@ function App() {
         Trigger Tagged Error
       </button>
 
+      <button onClick={ 
+        () => { 
+          throw new Error("Testing suspect commits feature!"); 
+          }
+        }
+      >
+        Trigger Broken Commit
+      </button>
+
     </div>
     
   )
