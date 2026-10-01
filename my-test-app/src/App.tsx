@@ -32,7 +32,7 @@ function App() {
 
       <button onClick={ 
         () => { 
-          throw new Error("Testing suspect commits feature!"); 
+          throw new Error("Testing sus commits feature!"); 
           }
         }
       >
